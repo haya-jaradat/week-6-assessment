@@ -38,11 +38,21 @@ Ex: addKeyPowerIndex(arrOfObj2)
 ]   
 */
 
-function addKeyPowerIndex() {
+function addKeyPowerIndex(arr) {
   // WRITE YOUR CODE UNDER THIS LINE  
+   arr.forEach(function(x,i) {
+      arr[i] = i ** 2;
+    });
+    return arr;
 
 }
+var arrOfObj2 = [
+  { a: 'cat' },
+  { b: 'dog' },
+  { c: 'duck' }
+]
 
+addKeyPowerIndex(arrOfObj2);
 
 
 
@@ -64,12 +74,13 @@ Ex: decreseBy(arrOfNum1,-6)
 => [83, 11, 39]
 */
 
-function decreseBy() {
+function decreseBy(arr , num) {
   // WRITE YOUR CODE UNDER THIS LINE 
-
+  var newArray = arr.map(a=> a-num)
+   return newArray;
 }
-
-
+var arrOfNum1 = [77,5,33]
+decreseBy(arrOfNum1,10);
 
 
 
@@ -102,9 +113,20 @@ Ex: nameLongerThan(arrOfObj4,6)
 ]
 */
 
-function nameLongerThan() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+function nameLongerThan(arr , num) {
+  // WRITE YOUR CODE UNDER THIS LINE  
+ var newArray = arr.filter(a=> a.length > num);
+ return newArray;
 }
+
+var arrOfObj4 = [
+  { name: "alex" },
+  { name: "mercer"},
+  { name: "alice" },
+  { name: "zaheer"},
+  { name: "elizabeth"}
+];
+nameLongerThan(arrOfObj4,4);
 
 
 
@@ -133,9 +155,23 @@ Ex: avgLength(arrOfObj4,"food")
 => 6.8
 */
 
-function avgLength() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+function avgLength(arr , x) {
+  // WRITE YOUR CODE UNDER THIS LINE
+  var count=0;      
+ arr.reduce((a => {
+      for( i=0 ; i < arr.length ; i++){
+           count += keys[i].length;
+      }
 
+ }));
+return count = (count/x);
 }
-
+var arrOfObj4 = [
+  { name: "alex", food: "fried chiken" },
+  { name: "mercer", food: "pizaa" },
+  { name: "alice", food: "burger" },
+  { name: "zaheer", food: "hot dog" },
+  { name: "elizabeth", food: "eggs" }
+];
+avgLength(arrOfObj4,"name");
 // Good luck :)
